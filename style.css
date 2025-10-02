@@ -4,7 +4,6 @@ body {
   background: #F6F7F9;
   color: #222;
 }
-
 .site-header {
   display: flex;
   align-items: center;
@@ -14,28 +13,17 @@ body {
   height: 56px;
   gap: 12px;
 }
-
 .logo {
   height: 32px;
   width: 32px;
   object-fit: contain;
 }
-
 .site-title {
   font-size: 1.35em;
   font-weight: 700;
   letter-spacing: 0.01em;
   margin-right: auto;
 }
-
-.theme-toggle-placeholder {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  height: 32px;
-  width: 32px;
-}
-
 .news-title {
   margin: 24px 16px 12px 16px;
   font-size: 1.22em;
@@ -43,51 +31,48 @@ body {
   color: #000;
   font-family: 'Inter', Arial, sans-serif;
 }
-
 .news-slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 0 10px;
+  margin: 0 auto;
   position: relative;
-  height: 340px;
-  max-width: 420px;
   width: 100%;
+  max-width: 900px;
 }
-
 .news-slider {
   width: 100%;
-  height: 260px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   touch-action: pan-x;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
 }
-
 .news-slide {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
   display: flex;
   flex-direction: column;
   background: #F6F7F9;
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(79,100,113,0.06);
   overflow: hidden;
-  z-index: 1;
+  margin: 0 6px;
+  min-width: 0;
+  flex: 1 1 0;
+  max-width: 100%;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
 }
-
 .slide-image {
   width: 100%;
   height: 40%;
+  min-height: 110px;
   object-fit: cover;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   background: #4F6471;
 }
-
 .slide-content {
   display: flex;
   flex-direction: column;
@@ -96,14 +81,13 @@ body {
   height: 60%;
   box-sizing: border-box;
   background: rgba(137, 160, 189, .6);
+  position: relative;
 }
-
 .slide-title-row {
   display: flex;
   align-items: flex-start;
   gap: 8px;
 }
-
 .slide-title {
   font-size: 1.07em;
   font-weight: 700;
@@ -114,11 +98,9 @@ body {
   flex: 1;
   word-break: break-word;
 }
-
 .slide-title:hover {
   text-decoration: underline;
 }
-
 .slide-link-icon {
   display: inline-block;
   width: 24px;
@@ -128,7 +110,6 @@ body {
   stroke: #222;
   fill: #fff;
 }
-
 .slide-date {
   font-size: 1em;
   opacity: 0.85;
@@ -136,8 +117,7 @@ body {
   color: #6B7C8C;
   font-family: 'Inter', Arial, sans-serif;
 }
-
-/* Pagination dots */
+/* Pagination dots (default desktop) */
 .slider-pagination {
   display: flex;
   justify-content: center;
@@ -146,7 +126,6 @@ body {
   margin-top: 14px;
   height: 24px;
 }
-
 .slider-dot {
   width: 7px;
   height: 7px;
@@ -156,17 +135,77 @@ body {
   transition: background 0.18s;
   opacity: 0.9;
 }
-
 .slider-dot.active {
   background: #4F6471;
   opacity: 1;
 }
-
+/* -------- MOBILE -------- */
+@media (max-width: 700px) {
+  .news-slider {
+    min-height: 260px;
+    height: 260px;
+    display: block;
+    position: relative;
+  }
+  .news-slide {
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+  }
+  /* точки внутри карточки, внизу */
+  .slide-content .slider-pagination {
+    position: absolute;
+    left: 0; right: 0; bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-content: center;
+    height: 24px;
+    background: none;
+    z-index: 2;
+    pointer-events:auto;
+  }
+  .slider-pagination {
+    display: none;
+  }
+}
+/* -------- DESKTOP -------- */
+@media (min-width: 701px) {
+  .news-slider {
+    display: flex;
+    gap: 18px;
+    min-height: 260px;
+    height: auto;
+    position: relative;
+  }
+  .news-slide {
+    position: static;
+    min-width: 0;
+    max-width: 300px;
+    height: 260px;
+    margin: 0 9px;
+    flex: 0 1 300px;
+    transition: none;
+  }
+  /* точки под слайдером */
+  .slider-pagination {
+    display: flex;
+  }
+  .slide-content .slider-pagination {
+    display: none !important;
+  }
+}
 @media (max-width: 400px) {
   .news-slider-container {
-    height: 290px;
+    min-height: 210px;
   }
   .news-slider {
+    min-height: 210px;
     height: 210px;
   }
 }
