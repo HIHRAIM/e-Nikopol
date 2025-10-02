@@ -1,19 +1,19 @@
 // Данные для новостей
 const newsSlides = [
   {
-    image: 'assets/images/news1.jpg',
+    image: 'assets/images/NovynaN1.jpg',
     title: 'Нікополь і Марганець отримали звання Міст-Героїв – Зеленський',
     url: 'https://www.president.gov.ua/news/nikopol-i-marganec-otrimali-zvannya-mist-geroyiv-zelenskij-85789',
     date: '1 жовтня, 2025 р.'
   },
   {
-    image: 'assets/images/news2.jpg',
+    image: 'assets/images/NovynaN2.jpg',
     title: 'Дитяча лікарня Нікополя отримала гуманітарний вантаж від благодійник...',
     url: 'https://nikopol.city/articles/271490/dityacha-likarnya-nikopolya-otrimala-gumanitarnij-vantazh',
     date: '29 вересня, 2025 р.'
   },
   {
-    image: 'assets/images/news3.jpg',
+    image: 'assets/images/NovynaN3.jpg',
     title: 'Футболісти з Нікополя завдали розгромної поразки супернику у ...',
     url: 'https://sport.nikopolcity.net/news/football/nikopol-vs-rival-2025',
     date: '29 вересня, 2025 р.'
