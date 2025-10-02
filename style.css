@@ -40,7 +40,7 @@ body {
   margin: 24px 16px 12px 16px;
   font-size: 1.22em;
   font-weight: 700;
-  color: #222;
+  color: #000;
   font-family: 'Inter', Arial, sans-serif;
 }
 
@@ -95,6 +95,7 @@ body {
   padding: 14px 14px 10px 14px;
   height: 60%;
   box-sizing: border-box;
+  background: rgba(137, 160, 189, .6);
 }
 
 .slide-title-row {
