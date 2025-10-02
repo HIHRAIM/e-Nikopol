@@ -54,7 +54,7 @@ body {
   display: flex;
   flex-direction: column;
   background: #F6F7F9;
-  border-radius: 18px;
+  border-radius: 20px;
   box-shadow: 0 4px 16px rgba(79,100,113,0.06);
   overflow: hidden;
   margin: 0 6px;
@@ -69,8 +69,8 @@ body {
   height: 40%;
   min-height: 110px;
   object-fit: cover;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   background: #4F6471;
 }
 .slide-content {
@@ -109,6 +109,9 @@ body {
   margin-top: 2px;
   stroke: #222;
   fill: #fff;
+  padding: 5px;
+  border-radius: 100%;
+  background: #fff;
 }
 .slide-date {
   font-size: 1em;
@@ -178,7 +181,7 @@ body {
 @media (min-width: 701px) {
   .news-slider {
     display: flex;
-    gap: 18px;
+    gap: 20px;
     min-height: 260px;
     height: auto;
     position: relative;
