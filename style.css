@@ -36,7 +36,6 @@ body.theme-dark {
   gap: 0;
   margin-left: 16px;
   height: 32px;
-  width: 70px;
   background: #3a4d5f;
   border-radius: 20px;
   padding: 2px 3px;
@@ -174,6 +173,9 @@ body.theme-dark .slide-title {
   text-decoration: underline;
 }
 .slide-link-icon {
+  background: #fff;
+  border-radius: 1000%;
+  padding: 5px;
   display: inline-block;
   width: 24px;
   height: 24px;
