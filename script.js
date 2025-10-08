@@ -198,3 +198,49 @@ window.addEventListener('DOMContentLoaded', () => {
   indicator.style.left = body.classList.contains('theme-dark') ? '35px' : '3px';
   renderSlides();
 });
+
+function fetchWeather() {
+  const weatherCard = document.getElementById('weather-card');
+  if (!weatherCard) return;
+
+  const lat = 47.5667;
+  const lon = 34.3962;
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
+    .then(res => res.json())
+    .then(data => {
+      if (!data.current_weather) {
+        weatherCard.innerHTML = '<div class="weather-loading">Не вдалося отримати дані</div>';
+        return;
+      }
+      const temp = Math.round(data.current_weather.temperature);
+      const wind = Math.round(data.current_weather.windspeed);
+      const iconId = data.current_weather.weathercode;
+      const desc = weatherDescription(iconId);
+      weatherCard.innerHTML = `
+        <div class="weather-main">
+          <img class="weather-icon" src="assets/images/weather/${iconId}.png" alt="${desc}">
+          <span class="weather-temp">${temp}°C</span>
+        </div>
+        <div class="weather-desc">${desc}</div>
+        <div class="weather-details">Вітер: ${wind} км/год</div>
+      `;
+    })
+    .catch(() => {
+      weatherCard.innerHTML = '<div class="weather-loading">Не вдалося отримати дані</div>';
+    });
+}
+
+function weatherDescription(code) {
+  if (code === 0) return "Ясно";
+  if (code === 1 || code === 2) return "Мінлива хмарність";
+  if (code === 3) return "Хмарно";
+  if (code === 45 || code === 48) return "Туман";
+  if (code >= 51 && code <= 67) return "Дощ";
+  if (code >= 71 && code <= 86) return "Сніг";
+  if (code >= 95) return "Гроза";
+  return "Погода";
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  fetchWeather();
+});
