@@ -245,18 +245,19 @@ body.theme-dark .weather-title {
   color: #ffd600;
 }
 .weather-card {
-  max-width: 420px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 18px;
-  background: #e4ebf5;
-  box-shadow: 0 4px 16px rgba(79,100,113,0.10);
-  padding: 24px 18px 18px 18px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  height: 60%;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 18px;
+  background: rgba(137, 160, 189, .6);
+  box-shadow: 0 4px 16px rgba(79, 100, 113, 0.10);
+  padding: 24px 18px 18px 18px;
   align-items: center;
-  min-height: 85px;
 }
 body.theme-dark .weather-card {
   background: #364152;
