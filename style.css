@@ -81,7 +81,7 @@ body.theme-dark .theme-indicator {
 body.theme-dark .site-header {
   background: #364152;
 }
-.news-title {
+.section-title {
   margin: 24px 16px 12px 16px;
   font-size: 1.22em;
   font-weight: 700;
@@ -89,7 +89,7 @@ body.theme-dark .site-header {
   font-family: 'Inter', Arial, sans-serif;
   transition: color 0.35s;
 }
-body.theme-dark .news-title {
+body.theme-dark .section-title {
   color: #dde1e7;
 }
 .news-slider-container {
@@ -233,17 +233,6 @@ body.theme-dark .slider-dot.active {
   max-width: 420px;
   margin: 0 auto 34px auto;
 }
-.weather-title {
-  margin: 24px 16px 12px 16px;
-  font-size: 1.13em;
-  font-weight: 700;
-  color: #4F6471;
-  font-family: 'Inter', Arial, sans-serif;
-  transition: color 0.35s;
-}
-body.theme-dark .weather-title {
-  color: #ffd600;
-}
 .weather-card {
   display: flex;
   flex-direction: column;
@@ -300,17 +289,6 @@ body.theme-dark .weather-desc {
   max-width: none !important;
   width: 100%;
   max-width: 420px;
-}
-.map-title {
-  margin: 24px 16px 12px 16px;
-  font-size: 1.22em;
-  font-weight: 700;
-  color: #000;
-  font-family: 'Inter', Arial, sans-serif;
-  transition: color 0.35s;
-}
-body.theme-dark .map-title {
-  color: #dde1e7;
 }
 .city-map {
   border-radius: 18px;
