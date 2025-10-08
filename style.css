@@ -82,7 +82,7 @@ body.theme-dark .theme-indicator {
 body.theme-dark .site-header {
   background: #364152;
 }
-.news-title {
+.main-title {
   margin: 24px 16px 12px 16px;
   font-size: 1.22em;
   font-weight: 700;
@@ -90,7 +90,7 @@ body.theme-dark .site-header {
   font-family: 'Inter', Arial, sans-serif;
   transition: color 0.35s;
 }
-body.theme-dark .news-title {
+body.theme-dark .main-title {
   color: #dde1e7;
 }
 .news-slider-container {
@@ -231,17 +231,6 @@ body.theme-dark .slider-dot.active {
   max-width: 420px;
   margin: 0 auto 36px auto;
   padding: 0 15px;
-}
-.map-title {
-  margin: 24px 0 12px 0;
-  font-size: 1.13em;
-  font-weight: 700;
-  color: #4F6471;
-  font-family: 'Inter', Arial, sans-serif;
-  transition: color 0.35s;
-}
-body.theme-dark .map-title {
-  color: #ffd600;
 }
 .city-map {
   border-radius: 18px;
