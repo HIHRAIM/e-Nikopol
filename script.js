@@ -230,6 +230,30 @@ function fetchWeather() {
     });
 }
 
+function weatherIconSVG(code, theme = 'light') {
+  if (code === 0) { // Ясно
+    return theme === 'dark'
+      ? '<svg width="48" height="48"><circle cx="24" cy="24" r="18" fill="#FFD600"/><circle cx="24" cy="24" r="12" fill="#232931" opacity="0.2"/></svg>'
+      : '<svg width="48" height="48"><circle cx="24" cy="24" r="18" fill="#FFD600"/><circle cx="24" cy="24" r="12" fill="#F6F7F9" opacity="0.2"/></svg>';
+  }
+  if (code === 1 || code === 2) { // Мінлива хмарність
+    return '<svg width="48" height="48"><ellipse cx="24" cy="30" rx="13" ry="10" fill="#B0B9C3"/><ellipse cx="34" cy="26" rx="9" ry="7" fill="#FFD600" opacity="0.7"/></svg>';
+  }
+  if (code === 3) { // Хмарно
+    return '<svg width="48" height="48"><ellipse cx="24" cy="28" rx="14" ry="12" fill="#B0B9C3"/><ellipse cx="34" cy="24" rx="10" ry="8" fill="#B0B9C3" opacity="0.7"/></svg>';
+  }
+  if (code >= 51 && code <= 67) { // Дощ
+    return '<svg width="48" height="48"><ellipse cx="24" cy="28" rx="13" ry="10" fill="#B0B9C3"/><line x1="18" y1="40" x2="18" y2="48" stroke="#4F6471" stroke-width="3"/><line x1="24" y1="40" x2="24" y2="48" stroke="#4F6471" stroke-width="3"/><line x1="30" y1="40" x2="30" y2="48" stroke="#4F6471" stroke-width="3"/></svg>';
+  }
+  if (code >= 71 && code <= 86) { // Сніг
+    return '<svg width="48" height="48"><ellipse cx="24" cy="28" rx="13" ry="10" fill="#B0B9C3"/><text x="18" y="46" font-size="22" fill="#b9c6e4">*</text><text x="28" y="46" font-size="22" fill="#b9c6e4">*</text></svg>';
+  }
+  if (code >= 95) { // Гроза
+    return '<svg width="48" height="48"><ellipse cx="24" cy="28" rx="13" ry="10" fill="#B0B9C3"/><polygon points="22,38 26,38 24,44" fill="#FFD600"/><polyline points="22,38 24,42 26,38" stroke="#FFD600" stroke-width="2" fill="none"/></svg>';
+  }
+  return '<svg width="48" height="48"><ellipse cx="24" cy="28" rx="13" ry="10" fill="#B0B9C3"/></svg>';
+}
+
 function weatherDescription(code) {
   if (code === 0) return "Ясно";
   if (code === 1 || code === 2) return "Мінлива хмарність";
