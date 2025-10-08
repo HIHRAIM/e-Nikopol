@@ -7,17 +7,32 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="theme-light">
   <header class="site-header">
     <img src="assets/images/logo.png" alt="Логотип" class="logo">
     <span class="site-title">е-Нікополь</span>
+    <div class="theme-switch">
+      <button id="theme-sun" class="theme-btn active" aria-label="Денна тема">
+        <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="#FFD600"/><g stroke="#FFD600" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="5" y1="5" x2="8" y2="8"/><line x1="16" y1="16" x2="19" y2="19"/><line x1="5" y1="19" x2="8" y2="16"/><line x1="16" y1="8" x2="19" y2="5"/></g></svg>
+      </button>
+      <button id="theme-moon" class="theme-btn" aria-label="Нічна тема">
+        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M18 12.5c0-3.6-2.9-6.5-6.5-6.5a6.5 6.5 0 0 0 0 13c3.6 0 6.5-2.9 6.5-6.5z" fill="#4F6471"/></svg>
+      </button>
+      <div class="theme-indicator"></div>
+    </div>
   </header>
   <main>
     <h1 class="news-title">Новини</h1>
     <div class="news-slider-container">
       <div class="news-slider" id="news-slider"></div>
-      <div class="slider-pagination" id="slider-pagination"></div>
     </div>
+    <section class="city-map-section">
+      <h2 class="map-title">Мапа міста</h2>
+      <div class="city-map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=34.331%2C47.556%2C34.411%2C47.606&amp;layer=mapnik"
+          style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
   </main>
   <script src="script.js"></script>
 </body>
