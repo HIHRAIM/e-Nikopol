@@ -229,9 +229,8 @@ body.theme-dark .slider-dot.active {
 }
 /* Погода */
 .weather-section {
+  max-width: none !important;
   width: 100%;
-  max-width: 420px;
-  margin: 0 auto 34px auto;
 }
 .weather-card {
   display: flex;
@@ -338,7 +337,7 @@ body.theme-dark .city-map {
   .news-slider-container > .slider-pagination {
     display: none;
   }
-  .city-map {
+  .weather-card, .city-map {
     max-width: 420px;
     margin-left: auto;
     margin-right: auto;
