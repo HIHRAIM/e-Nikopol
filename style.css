@@ -82,25 +82,28 @@ body.theme-dark .site-header {
   background: #364152;
 }
 .section-title {
-  margin: 24px 16px 12px 16px;
+  margin: 32px auto 16px auto;
   font-size: 1.22em;
   font-weight: 700;
   color: #000;
   font-family: 'Inter', Arial, sans-serif;
+  max-width: 420px;
   transition: color 0.35s;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 body.theme-dark .section-title {
   color: #dde1e7;
 }
-.news-slider-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+.news-slider-container, .weather-card, .city-map {
   max-width: 420px;
-  margin: 0 auto 36px auto;
-  padding: 0 15px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.news-slider-container {
+  margin-bottom: 28px;
 }
 .news-slider {
   width: 100%;
@@ -228,24 +231,16 @@ body.theme-dark .slider-dot.active {
   background: #ffd600;
 }
 /* Погода */
-.weather-section {
-  max-width: none !important;
-  width: 100%;
-}
 .weather-card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  height: 60%;
-  box-sizing: border-box;
-  position: relative;
-  max-width: 420px;
-  width: 100%;
+  align-items: center;
   border-radius: 18px;
   background: rgba(137, 160, 189, .6);
   box-shadow: 0 4px 16px rgba(79, 100, 113, 0.10);
   padding: 24px 18px 18px 18px;
-  align-items: center;
+  min-height: 90px;
+  margin-bottom: 28px;
 }
 body.theme-dark .weather-card {
   background: #364152;
@@ -269,6 +264,9 @@ body.theme-dark .weather-card {
   width: 48px;
   height: 48px;
   margin-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .weather-desc {
   font-size: 1.1em;
@@ -284,16 +282,12 @@ body.theme-dark .weather-desc {
   opacity: 0.7;
 }
 /* Карта */
-.city-map-section {
-  max-width: none !important;
-  width: 100%;
-  max-width: 420px;
-}
 .city-map {
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(79,100,113,0.10);
   background: #e4ebf5;
+  margin-bottom: 40px;
 }
 body.theme-dark .city-map {
   background: #364152;
@@ -337,17 +331,11 @@ body.theme-dark .city-map {
   .news-slider-container > .slider-pagination {
     display: none;
   }
-  .weather-card, .city-map {
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 /* -------- DESKTOP -------- */
 @media (min-width: 701px) {
-  .news-slider-container, .city-map-section {
+  .news-slider-container, .weather-card, .city-map {
     max-width: 900px;
-    padding: 0 40px;
   }
   .news-slider {
     display: flex;
@@ -372,30 +360,21 @@ body.theme-dark .city-map {
     left: auto;
     right: auto;
   }
-  .weather-section {
-    max-width: 900px;
-    padding: 0 40px;
-  }
-  .weather-card {
-    max-width: 420px;
-  }
-  .city-map {
-    width: 950px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 @media (max-width: 400px) {
-  .news-slider-container, .city-map-section {
-    padding: 0 5px;
+  .section-title {
+    font-size: 1.07em;
+    margin: 28px 7px 10px 7px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .news-slider-container, .weather-card, .city-map {
+    padding: 0 2px;
     min-height: 210px;
   }
   .news-slider {
     min-height: 210px;
     height: 210px;
-  }
-  .weather-section {
-    padding: 0 5px;
   }
   .weather-card {
     padding: 18px 6px 12px 6px;
