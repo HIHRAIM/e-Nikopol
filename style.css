@@ -115,7 +115,7 @@ body.theme-dark .section-title {
   display: flex;
   flex-direction: column;
   background: #F6F7F9;
-  border-radius: 18px;
+  border-radius: 20px;
   box-shadow: 0 4px 16px rgba(79,100,113,0.06);
   overflow: hidden;
   min-width: 100%;
@@ -135,8 +135,8 @@ body.theme-dark .news-slide {
   height: 40%;
   min-height: 110px;
   object-fit: cover;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   background: #4F6471;
 }
 .slide-content {
@@ -234,7 +234,7 @@ body.theme-dark .slider-dot.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 18px;
+  border-radius: 20px;
   background: rgba(137, 160, 189, .6);
   box-shadow: 0 4px 16px rgba(79, 100, 113, 0.10);
   padding: 24px 18px 18px 18px;
@@ -282,7 +282,7 @@ body.theme-dark .weather-desc {
 }
 /* Карта */
 .city-map {
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(79,100,113,0.10);
   background: #e4ebf5;
