@@ -197,6 +197,7 @@ btnMoon.addEventListener('click', () => {
 window.addEventListener('DOMContentLoaded', () => {
   indicator.style.left = body.classList.contains('theme-dark') ? '35px' : '3px';
   renderSlides();
+  fetchWeather();
 });
 
 function fetchWeather() {
@@ -216,9 +217,11 @@ function fetchWeather() {
       const wind = Math.round(data.current_weather.windspeed);
       const iconId = data.current_weather.weathercode;
       const desc = weatherDescription(iconId);
+
+      const theme = document.body.classList.contains('theme-dark') ? 'dark' : 'light';
       weatherCard.innerHTML = `
         <div class="weather-main">
-          <img class="weather-icon" src="assets/images/weather/${iconId}.png" alt="${desc}">
+          <span class="weather-icon">${weatherIconSVG(iconId, theme)}</span>
           <span class="weather-temp">${temp}°C</span>
         </div>
         <div class="weather-desc">${desc}</div>
@@ -264,7 +267,3 @@ function weatherDescription(code) {
   if (code >= 95) return "Гроза";
   return "Погода";
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-  fetchWeather();
-});
