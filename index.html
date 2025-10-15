@@ -10,11 +10,15 @@
 </head>
 <body class="theme-light">
   <header class="site-header">
-    <img src="assets/images/logo.png" alt="Логотип" class="logo">
-    <span class="site-title">єНікополь</span>
+    <a href="index.html" class="logo-link"><img src="assets/images/logo.png" alt="Логотип" class="logo"></a>
+    <a href="index.html" class="site-title-link"><span class="site-title">єНікополь</span></a>
+    <nav class="header-nav">
+      <a href="services.html">Послуги</a>
+      <a href="forum.html">Форум</a>
+    </nav>
     <div class="theme-switch">
       <button id="theme-sun" class="theme-btn active" aria-label="Денна тема">
-        <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="#FFD600"/><g stroke="#FFD600" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="5" y1="5" x2="8" y2="8"/><line x1="16" y1="16" x2="19" y2="19"/><line x1="5" y1="19" x2="8" y2="16"/><line x1="16" y1="8" x2="19" y2="5"/></g></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="#FFD600"/><g stroke="#FFD600" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="5" y1="5" x2="7" y2="7"/><line x1="17" y1="17" x2="19" y2="19"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="5" y1="19" x2="7" y2="17"/><line x1="17" y1="7" x2="19" y2="5"/></g></svg>
       </button>
       <button id="theme-moon" class="theme-btn" aria-label="Нічна тема">
         <svg width="24" height="24" viewBox="0 0 24 24"><path d="M18 12.5c0-3.6-2.9-6.5-6.5-6.5a6.5 6.5 0 0 0 0 13c3.6 0 6.5-2.9 6.5-6.5z" fill="#4F6471"/></svg>
@@ -37,6 +41,16 @@
         style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </main>
+  <nav class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content" id="mobile-nav-content">
+      <a href="services.html">Послуги</a>
+      <a href="forum.html">Форум</a>
+    </div>
+    <div class="mobile-nav-handle" id="mobile-nav-handle">
+      <span>Меню</span>
+      <svg class="arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </div>
+  </nav>
   <script src="script.js"></script>
 </body>
 </html>
