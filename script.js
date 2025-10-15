@@ -28,6 +28,7 @@ function isMobile() {
 }
 
 function renderSlides() {
+  if (!slider) return;
   slider.innerHTML = '';
   if (isMobile()) {
     newsSlides.forEach((slide, idx) => {
@@ -142,31 +143,33 @@ function slideTo(idx) {
 let startX = null;
 let isSwiping = false;
 
-slider.addEventListener('touchstart', (e) => {
-  if (!isMobile()) return;
-  if (e.touches.length === 1) {
-    startX = e.touches[0].clientX;
-    isSwiping = true;
-  }
-});
-slider.addEventListener('touchend', (e) => {
-  if (!isMobile()) return;
-  if (!isSwiping) return;
-  const endX = e.changedTouches[0].clientX;
-  const dx = endX - startX;
-  if (Math.abs(dx) > 40) {
-    if (dx < 0 && currentIndex < newsSlides.length - 1) {
-      slideTo(currentIndex + 1);
-    } else if (dx > 0 && currentIndex > 0) {
-      slideTo(currentIndex - 1);
+if (slider) {
+  slider.addEventListener('touchstart', (e) => {
+    if (!isMobile()) return;
+    if (e.touches.length === 1) {
+      startX = e.touches[0].clientX;
+      isSwiping = true;
     }
-  }
-  isSwiping = false;
-  startX = null;
-});
+  });
+  slider.addEventListener('touchend', (e) => {
+    if (!isMobile()) return;
+    if (!isSwiping) return;
+    const endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+    if (Math.abs(dx) > 40) {
+      if (dx < 0 && currentIndex < newsSlides.length - 1) {
+        slideTo(currentIndex + 1);
+      } else if (dx > 0 && currentIndex > 0) {
+        slideTo(currentIndex - 1);
+      }
+    }
+    isSwiping = false;
+    startX = null;
+  });
+}
 
 window.addEventListener('resize', () => {
-  if (isMobile() && currentIndex >= newsSlides.length) currentIndex = 0;
+  if (slider && isMobile() && currentIndex >= newsSlides.length) currentIndex = 0;
   renderSlides();
 });
 
@@ -266,4 +269,13 @@ function weatherDescription(code) {
   if (code >= 71 && code <= 86) return "Сніг";
   if (code >= 95) return "Гроза";
   return "Погода";
+}
+
+const mobileNav = document.getElementById('mobile-nav');
+const mobileNavHandle = document.getElementById('mobile-nav-handle');
+
+if (mobileNav && mobileNavHandle) {
+  mobileNavHandle.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
 }
