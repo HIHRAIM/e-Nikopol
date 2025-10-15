@@ -26,20 +26,31 @@
       <div class="theme-indicator"></div>
     </div>
   </header>
-  <main>
-    <h1 class="section-title">Новини</h1>
-    <div class="news-slider-container">
-      <div class="news-slider" id="news-slider"></div>
+  <main class="main-grid">
+    <div class="main-content">
+      <h1 class="section-title">Новини</h1>
+      <div class="news-slider-container">
+        <div class="news-slider" id="news-slider"></div>
+      </div>
+      <h2 class="section-title">Погода</h2>
+      <div class="weather-card" id="weather-card">
+        <div class="weather-loading">Завантаження...</div>
+      </div>
+      <h2 class="section-title">Мапа</h2>
+      <div class="city-map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=34.331%2C47.556%2C34.411%2C47.606&amp;layer=mapnik"
+          style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
     </div>
-    <h2 class="section-title">Погода</h2>
-    <div class="weather-card" id="weather-card">
-      <div class="weather-loading">Завантаження...</div>
-    </div>
-    <h2 class="section-title">Мапа</h2>
-    <div class="city-map">
-      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=34.331%2C47.556%2C34.411%2C47.606&amp;layer=mapnik"
-        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+    <aside class="sidebar-ads">
+      <h2 class="section-title">Реклама</h2>
+      <div class="ad-placeholder">
+        <span>Тут могла би бути ваша реклама</span>
+      </div>
+      <div class="ad-placeholder">
+        <span>Тут могла би бути ваша реклама</span>
+      </div>
+    </aside>
   </main>
   <nav class="mobile-nav" id="mobile-nav">
     <div class="mobile-nav-content" id="mobile-nav-content">
