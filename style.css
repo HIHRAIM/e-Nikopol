@@ -4,6 +4,7 @@ body {
   background: #F6F7F9;
   color: #222;
   transition: background 0.35s, color 0.35s;
+  padding-bottom: 50px;
 }
 body.theme-dark {
   background: #232931;
@@ -17,6 +18,13 @@ body.theme-dark {
   padding: 12px 16px;
   height: 56px;
   gap: 12px;
+  box-sizing: border-box;
+}
+.logo-link, .site-title-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
 }
 .logo {
   height: 32px;
@@ -27,7 +35,27 @@ body.theme-dark {
   font-size: 1.35em;
   font-weight: 700;
   letter-spacing: 0.01em;
-  margin-right: auto;
+}
+.header-nav {
+  display: none;
+  margin-left: auto;
+  gap: 20px;
+}
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.header-nav a:hover {
+  border-bottom-color: #ffd600;
+}
+.header-nav a.active {
+  color: #ffd600;
+  border-bottom-color: #ffd600;
 }
 .theme-switch {
   display: flex;
@@ -91,15 +119,18 @@ body.theme-dark .site-header {
   text-align: left;
   padding-left: 10px;
   padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 body.theme-dark .section-title {
   color: #dde1e7;
 }
-.news-slider-container, .weather-card, .city-map {
+.news-slider-container, .weather-card, .city-map, .services-container, .placeholder-content {
   max-width: 420px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
 }
 .news-slider-container {
   margin-bottom: 28px;
@@ -201,7 +232,6 @@ body.theme-dark .slide-link-icon {
 body.theme-dark .slide-date {
   color: #b9c6e4;
 }
-/* Pagination dots */
 .slider-pagination {
   display: flex;
   justify-content: center;
@@ -229,7 +259,6 @@ body.theme-dark .slide-date {
 body.theme-dark .slider-dot.active {
   background: #ffd600;
 }
-/* Погода */
 .weather-card {
   display: flex;
   flex-direction: column;
@@ -280,7 +309,6 @@ body.theme-dark .weather-desc {
   font-size: 1em;
   opacity: 0.7;
 }
-/* Карта */
 .city-map {
   border-radius: 20px;
   overflow: hidden;
@@ -297,8 +325,146 @@ body.theme-dark .city-map {
   border: none;
   display: block;
 }
+
+/* Стили для страницы Послуги */
+.services-page .section-title {
+  max-width: 900px;
+}
+.services-container {
+  padding: 0 10px;
+  max-width: 900px;
+}
+.service-category {
+  margin-bottom: 28px;
+  background: rgba(137, 160, 189, .6);
+  padding: 16px;
+  border-radius: 20px;
+}
+body.theme-dark .service-category {
+  background: #364152;
+}
+.service-category h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #4F6471;
+  padding-bottom: 8px;
+}
+body.theme-dark .service-category h2 {
+  border-bottom-color: #4F6471;
+  color: #ffd600;
+}
+.service-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.service-category li {
+  margin-bottom: 10px;
+}
+.service-category a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+body.theme-dark .service-category a {
+  color: #dde1e7;
+}
+.service-category a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+body.theme-dark .service-category a:hover {
+  color: #ffd600;
+}
+
+/* Стили для страницы-заглушки (Форум) */
+.placeholder-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 150px);
+  text-align: center;
+}
+.placeholder-content {
+  padding: 20px;
+  background: rgba(137, 160, 189, .6);
+  border-radius: 20px;
+}
+body.theme-dark .placeholder-content {
+  background: #364152;
+}
+.placeholder-content h1 {
+  color: #222;
+}
+body.theme-dark .placeholder-content h1 {
+  color: #ffd600;
+}
+
+/* Мобильная навигация */
+.mobile-nav {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.mobile-nav-handle {
+  background: #4F6471;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+  cursor: pointer;
+}
+body.theme-dark .mobile-nav-handle {
+  background: #364152;
+}
+.mobile-nav-handle span {
+  font-weight: 600;
+}
+.mobile-nav-handle .arrow-up {
+  transition: transform 0.3s;
+}
+.mobile-nav.open .arrow-up {
+  transform: rotate(180deg);
+}
+.mobile-nav-content {
+  background: #3a4d5f;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+body.theme-dark .mobile-nav-content {
+  background: #2c3240;
+}
+.mobile-nav.open .mobile-nav-content {
+  max-height: 200px;
+}
+.mobile-nav-content a {
+  color: #fff;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid #4F6471;
+}
+.mobile-nav-content a:last-child {
+  border-bottom: none;
+}
+.mobile-nav-content a.active {
+  color: #ffd600;
+}
+
 /* -------- MOBILE -------- */
 @media (max-width: 700px) {
+  main {
+    padding-bottom: 50px;
+  }
   .news-slider {
     min-height: 260px;
     height: 260px;
@@ -330,10 +496,25 @@ body.theme-dark .city-map {
   .news-slider-container > .slider-pagination {
     display: none;
   }
+  .site-header .site-title {
+    margin-right: auto;
+  }
 }
 /* -------- DESKTOP -------- */
 @media (min-width: 701px) {
-  .news-slider-container, .weather-card, .city-map {
+  body {
+    padding-bottom: 0;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .header-nav {
+    display: flex;
+  }
+  .site-title {
+    margin-right: 0;
+  }
+  .news-slider-container, .weather-card, .city-map, .services-container, .placeholder-content {
     max-width: 900px;
   }
   .news-slider {
